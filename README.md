@@ -1,19 +1,50 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+⚖️ SAMILE SANTOS ADVOCACIA
 
-# Run and deploy your AI Studio app
+Site institucional desenvolvido para apresentação dos serviços jurídicos da Dra. Samile Santos, com foco em credibilidade, captação de clientes e presença digital profissional.
 
-This contains everything you need to run your app locally.
+🚀 SOBRE O PROJETO
 
-View your app in AI Studio: https://ai.studio/apps/drive/1aZxr69zSUF1ghw62RQsFUFRo1yV-NWhK
+Este projeto consiste em um site moderno, responsivo e otimizado, desenvolvido para:
 
-## Run Locally
+Apresentar os serviços jurídicos
+Facilitar o contato com clientes
+Gerar autoridade no ambiente digital
+Servir como base para campanhas de tráfego pago
+🛠️ TECNOLOGIAS UTILIZADAS
+React + TypeScript
+Vite
+HTML5 + CSS3
+Integração com formulários (possível conexão com Google Sheets ou API)
+📂 ESTRUTURA DO PROJETO
+/public → Arquivos públicos
+/src → Código principal da aplicação
+index.html → Estrutura base
+App.tsx → Componente principal
+vite.config.ts → Configuração do projeto
+▶️ COMO RODAR O PROJETO
+Pré-requisitos:
+Node.js instalado
+Passos:
+npm install
+npm run dev
 
-**Prerequisites:**  Node.js
+O projeto estará disponível em:
+👉 http://localhost:5173
 
+🌐 DEPLOY
 
-1. Install dependencies:
-   `npm install`
-2. Run the app:
-   `npm run dev`
+Este projeto pode ser publicado facilmente em:
+
+GitHub Pages
+Vercel
+Netlify
+📞 CONTATO
+
+Para mais informações ou suporte:
+
+📱 WhatsApp: +55 21 98166-7021
+
+📌 OBSERVAÇÕES
+
+Este repositório contém apenas o front-end da aplicação.
+Dados e integrações externas (como banco de dados) não estão incluídos.
