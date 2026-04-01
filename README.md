@@ -29,7 +29,7 @@ npm install
 npm run dev
 
 O projeto estará disponível em:
-👉 http://localhost:5173
+git pages
 
 🌐 DEPLOY
 
