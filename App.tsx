@@ -21,10 +21,10 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Replace with actual generated paths from current context
-const DR_IMAGE = "/dra_samile.png"; // User provided image
-const OFFICE_IMAGE = "/law_office_logo.jpg"; // Updated extension
-const SEEK_HELP_IMAGE = "/session.png";
-const HERO_FULL_IMAGE = "/hero_full.jpg";
+const DR_IMAGE = "dra_samile.png"; // User provided image
+const OFFICE_IMAGE = "law_office_logo.jpg"; // Updated extension
+const SEEK_HELP_IMAGE = "session.png";
+const HERO_FULL_IMAGE = "hero_full.jpg";
 
 const FAQ_DATA = [
   {
@@ -115,102 +115,137 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="home" className="hero" style={{ 
-        backgroundImage: `url(${HERO_FULL_IMAGE})`, 
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center', 
-        backgroundColor: '#0F172A', /* Fallback color */
-        minHeight: '95vh',
+        backgroundColor: '#FFFFFF',
+        minHeight: '94vh',
         display: 'flex',
-        alignItems: 'center',
-        padding: '100px 0', /* Added padding for safety */
+        alignItems: 'flex-end',
+        padding: '180px 0 0', // Increased padding to avoid top-of-section clipping
         position: 'relative',
-        overflow: 'visible'
+        overflow: 'visible' // Changed from hidden to avoid clipping the head
       }}>
         <div className="container" style={{ 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center', 
-          gap: '4rem',
-          flexWrap: 'wrap',
-          zIndex: 3
+          display: 'grid', 
+          gridTemplateColumns: 'minmax(400px, 500px) minmax(500px, 700px)', // Widen portrait column even more
+          justifyContent: 'center', 
+          alignItems: 'stretch', 
+          gap: '2.5rem',
+          zIndex: 3,
+          minHeight: '700px'
         }}>
-          {/* Text Content Card */}
+          {/* Informational Box - White with Gold Border */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="hero-text glass"
+            className="hero-text"
             style={{ 
-              padding: '3.5rem 4rem', 
-              background: 'rgba(255, 255, 255, 0.25)', 
-              backdropFilter: 'blur(25px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)',
-              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.3)',
-              maxWidth: '800px',
-              flex: '1 1 600px'
+              padding: '6rem 4rem', // Increased from 4.5rem 3rem
+              background: '#FFFFFF', 
+              borderLeft: '6px solid var(--secondary)',
+              boxShadow: '20px 20px 60px rgba(0, 0, 0, 0.05)',
+              zIndex: 10,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center'
             }}
           >
             <span style={{ 
               color: 'var(--secondary)', 
               fontWeight: 700, 
-              letterSpacing: '3px', 
+              letterSpacing: '4px', 
               textTransform: 'uppercase', 
-              fontSize: '0.8rem',
+              fontSize: '0.85rem',
               display: 'block',
-              marginBottom: '1rem'
+              marginBottom: '1rem',
+              fontFamily: 'Montserrat, sans-serif'
             }}>
               Soluções Jurídicas Especializadas
             </span>
-            <h1 style={{ fontSize: '3rem', lineHeight: '1.1', marginBottom: '1.2rem', color: 'var(--primary)' }}>
+            <h1 style={{ 
+              fontSize: '3.5rem', 
+              lineHeight: '1.2', 
+              marginBottom: '0.8rem', 
+              color: 'var(--primary)',
+              fontFamily: '"Playfair Display", serif',
+              fontWeight: 700
+            }}>
               Dra. Samile Santos
             </h1>
             <div style={{ 
-              padding: '0.6rem 0', 
-              borderTop: '1px solid rgba(0,0,0,0.1)', 
-              borderBottom: '1px solid rgba(0,0,0,0.1)', 
-              display: 'block', 
-              marginBottom: '2rem',
-              whiteSpace: 'nowrap'
+              marginBottom: '2rem'
             }}>
-              <span style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-main)', opacity: 0.9 }}>
-                OAB-RJ XXX.XXX &nbsp; | &nbsp; Advocacia & Consultoria
+              <span style={{ 
+                fontWeight: 500, 
+                fontSize: '1rem', 
+                color: 'var(--text-muted)',
+                letterSpacing: '1px'
+              }}>
+                OAB-RJ XXX.XXX | Advocacia & Consultoria
               </span>
             </div>
-            <p style={{ fontSize: '1.15rem', lineHeight: '1.6', marginBottom: '2.5rem', color: 'var(--text-main)', fontStyle: 'italic', fontWeight: 500 }}>
+            <p style={{ 
+              fontSize: '1.4rem', 
+              lineHeight: '1.5', 
+              marginBottom: '3rem', 
+              color: 'var(--primary)', 
+              fontStyle: 'italic', 
+              fontWeight: 500,
+              fontFamily: '"Playfair Display", serif',
+              opacity: 0.9
+            }}>
               "Justiça com ética, agilidade e compromisso total com seus direitos."
             </p>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <button className="sharp-btn" style={{ boxShadow: 'var(--shadow-lg)' }}>
-                Falar com a Dra. <ArrowRight size={20} />
+            <div style={{ display: 'flex' }}>
+              <button className="sharp-btn" style={{ 
+                backgroundColor: 'var(--primary)', 
+                color: 'white',
+                padding: '1.2rem 3rem',
+                fontSize: '1rem',
+                fontWeight: 700,
+                border: 'none',
+                boxShadow: '0 10px 30px rgba(15, 23, 42, 0.2)'
+              }}>
+                FALAR COM A DRA. <ArrowRight size={22} style={{ marginLeft: '12px' }} />
               </button>
             </div>
           </motion.div>
 
-          {/* Square Lawyer Portrait Card */}
+          {/* Lawyer Portrait - Enquadrada Sem Cortes */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1.2, delay: 0.2 }}
             style={{
-              width: '450px',
-              height: '450px',
-              boxShadow: 'var(--secondary) 25px 25px 0px 0px',
-              border: '1px solid rgba(0,0,0,0.1)',
-              overflow: 'hidden',
-              background: 'white',
-              flexShrink: 0
+              zIndex: 2,
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'flex-start',
+              height: '100%',
+              overflow: 'visible' 
             }}
           >
-            <img 
-              src={DR_IMAGE} 
-              alt="Dra. Samile Santos" 
-              style={{ 
-                width: '100%', 
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'center top'
-              }} 
-            />
+            <div style={{ 
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+              overflow: 'visible'
+            }}>
+              <img 
+                src={DR_IMAGE} 
+                alt="Dra. Samile Santos" 
+                style={{ 
+                  width: '100%', 
+                  height: 'auto',
+                  display: 'block',
+                  transform: 'scale(1.58)', // Slightly smaller for better arm fit
+                  transformOrigin: 'top center',
+                  marginTop: '-95px', // Adjusted to keep head fully visible
+                  // Applied mask directly to image so shifted head isn't clipped
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+                  maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
+                }} 
+              />
+            </div>
           </motion.div>
         </div>
         
@@ -227,25 +262,22 @@ export default function App() {
       </section>
 
       {/* About Section */}
-      <section id="sobre" className="container about-section">
+      <section id="sobre" className="container about-section" style={{ paddingTop: '12rem' }}>
         <div className="about-image">
           <img src={OFFICE_IMAGE} alt="Escritório de Advocacia" />
         </div>
         <div className="about-text">
-          <div className="section-header" style={{ textAlign: 'left', margin: '0 0 2rem' }}>
+          <div className="section-header" style={{ textAlign: 'left', margin: '0 0 1rem' }}>
             <span>Dra. Samile Santos</span>
             <h2>Excelência e Compromisso na Defesa de Seus Direitos</h2>
           </div>
           <p>
-            Dra. Samile Santos é advogada apaixonada por justiça, com sólida experiência em auxiliar clientes a navegarem pela complexidade do sistema jurídico brasileiro. Sua prática baseia-se na transparência e no atendimento humanizado.
+            Dra. Samile Santos é advogada com sólida experiência no sistema jurídico brasileiro, oferecendo suporte estratégico em causas preventivas e contenciosas com foco em transparência e resultados.
           </p>
           <p>
-            Com foco em resultados e uma abordagem estratégica, Dra. Samile oferece um suporte jurídico completo, protegendo seus interesses desde a consultoria preventiva até o contencioso judicial de alta complexidade.
+            Nosso escritório utiliza tecnologia de ponta para garantir agilidade e precisão em cada caso, buscando sempre a resolução mais favorável e ética para a proteção total dos seus direitos.
           </p>
-          <p>
-            A advocacia moderna exige dinamismo e atualização constante. Por isso, nosso escritório utiliza as melhores ferramentas tecnológicas para garantir agilidade e precisão em cada caso, sempre com foco na resolução mais favorável ao cliente.
-          </p>
-          <button className="sharp-btn-secondary" style={{ marginTop: '1rem' }}>
+          <button className="sharp-btn-secondary" style={{ marginTop: '1.5rem', marginBottom: '1rem' }}>
             Conhecer Especialidades
           </button>
         </div>
@@ -447,7 +479,11 @@ export default function App() {
         rel="noopener noreferrer" 
         className="whatsapp-float"
       >
-        <MessageCircle fill="currentColor" />
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+          alt="WhatsApp" 
+          style={{ width: '100%', height: '100%' }}
+        />
       </a>
     </div>
   );
